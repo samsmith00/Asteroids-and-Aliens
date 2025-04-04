@@ -9,7 +9,8 @@ from asteroid.astroid_field import AsteroidField
 from player.shot import Shot
 from game_over_screens.game_over import game_over
 from powerups.powerups import PowerUps
-from powerups.spawn_powerups import Spawn_Powerups
+from powerups.spawn_powerups_rand_pos import Spawn_Powerups_Rand_Pos
+from powerups.spawn_powerups_fall import Spawn_Powerups_fall
 from timer import Timer
 from enemy.enemy import Enemy
 from enemy.spawn_enemy import Spawn_Enemy
@@ -40,8 +41,10 @@ def run_game(death_count):
     Player.containers = (updatable, drawable)
     
     PowerUps.containers = (powerups, drawable, updatable)
-    Spawn_Powerups.containers = updatable
-    spawn_powerups = Spawn_Powerups()
+    Spawn_Powerups_Rand_Pos.containers = updatable
+    Spawn_Powerups_fall.containers = updatable
+    #spawn_powerups_rand = Spawn_Powerups_Rand_Pos()
+    spawn_powerups_fall = Spawn_Powerups_fall()
     
     Timer.containers = (updatable, drawable)
     timer = Timer()

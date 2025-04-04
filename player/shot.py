@@ -1,6 +1,6 @@
 import pygame
 from circleShape import CircleShape
-from assets.constants import BULLET_RECT_SIZE, SHOT_RADIUS
+from assets.constants import BULLET_RECT_SIZE, SHOT_RADIUS, SCREEN_WIDTH, SCREEN_HEIGHT
 
 powerup_colors = {
         "default": "#FFFFFF",
@@ -36,6 +36,8 @@ class Shot(CircleShape):
    
     def update(self, dt):
         self.position += self.velocity * dt
+        if self.position.x > SCREEN_WIDTH or self.position.y > SCREEN_HEIGHT: 
+            self.kill()
         
     
     
