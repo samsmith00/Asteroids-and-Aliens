@@ -31,10 +31,7 @@ class PowerUps(CircleShape):
         
         self.image_path = self.image_lookup[self.lookup[powerup_type]]
         self.image = pygame.image.load(self.image_path).convert_alpha()
-        
-        print(self.rand_or_fall)
-        print(self.image_path)
-        print(self.image)
+
         
     def draw_text(self, screen, text, font, x, y, color): 
         img = font.render(text, True, color)

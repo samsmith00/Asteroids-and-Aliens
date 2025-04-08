@@ -6,11 +6,7 @@ from powerups.powerups import PowerUps
 
 
 class Spawn_Powerups_fall(pygame.sprite.Sprite): 
-    
-    edge = [
-        pygame.Vector2(0, -1), 
-        (random.uniform(POWERUPS_RADIUS, SCREEN_WIDTH - POWERUPS_RADIUS), -POWERUPS_RADIUS)
-    ]
+
     
     def __init__(self):
         pygame.sprite.Sprite.__init__(self, self.containers)
@@ -20,6 +16,11 @@ class Spawn_Powerups_fall(pygame.sprite.Sprite):
         self.type = random.choice(POWERUPS_TYPE)
         self.elapsed_time = 0
         self.spawn_time = random.randint(1,3)
+        
+        self.edge = [
+            pygame.Vector2(0, -1), 
+            (random.uniform(POWERUPS_RADIUS, SCREEN_WIDTH - POWERUPS_RADIUS), -POWERUPS_RADIUS)
+    ]
     
     
     def spawn(self, powerup_type): 
@@ -28,10 +29,6 @@ class Spawn_Powerups_fall(pygame.sprite.Sprite):
     def change_powerup(self): 
         self.spawn_time = random.randint(15, 30)
         self.elapsed_time = 0
-        self.edge = [
-            pygame.Vector2(0, -1), 
-            (random.uniform(POWERUPS_RADIUS, SCREEN_WIDTH - POWERUPS_RADIUS),SCREEN_HEIGHT + POWERUPS_RADIUS)
-        ]
         self.type = random.choice(POWERUPS_TYPE)
         
     def update(self, dt): 
