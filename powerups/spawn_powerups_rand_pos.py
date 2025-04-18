@@ -20,7 +20,7 @@ class Spawn_Powerups_Rand_Pos(pygame.sprite.Sprite):
         powerup = PowerUps(position[0], position[1], radius, powerup_type, "rand")
     
     def change_powerup(self): 
-        self.spawn_time = random.randint(15, 30)
+        self.spawn_time = random.randint(8, 15)
         self.elapsed_time = 0
         self.x_spawn_location = random.randrange(POWERUPS_RADIUS, SCREEN_WIDTH - POWERUPS_RADIUS)
         self.y_spawn_location = random.randrange(POWERUPS_RADIUS, SCREEN_HEIGHT - POWERUPS_RADIUS)
