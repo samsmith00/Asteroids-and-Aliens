@@ -27,7 +27,7 @@ class Spawn_Powerups_fall(pygame.sprite.Sprite):
         PowerUps(self.edge[1][0], self.edge[1][1], POWERUPS_RADIUS, powerup_type, "fall")
         
     def change_powerup(self): 
-        self.spawn_time = random.randint(15, 30)
+        self.spawn_time = random.randint(8, 15)
         self.elapsed_time = 0
         self.type = random.choice(POWERUPS_TYPE)
         
