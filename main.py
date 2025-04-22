@@ -15,7 +15,7 @@ from timer import Timer
 from enemy.enemy import Enemy
 from enemy.spawn_enemy import Spawn_Enemy
 from score import ScoreBoard
-sound_path = os.path.join("assets", "background_music.mp3") # For music sometime
+sound_path = os.path.join("assets", "background_music.mp3") # For music sometime, stops all other sounds though
 
 
 def run_game(death_count): 

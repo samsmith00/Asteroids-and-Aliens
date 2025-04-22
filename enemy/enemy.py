@@ -5,7 +5,7 @@ import random
 from pygame import mixer
 from circleShape import CircleShape
 from player.shot import Shot
-from assets.constants import ENEMY_WAIT_TIME, ENEMY_SHOT_COUNT, SHOT_RADIUS, PLAYER_SHOOT_SPEED
+from assets.constants import ENEMY_WAIT_TIME, ENEMY_SHOT_COUNT, SHOT_RADIUS, PLAYER_SHOOT_SPEED, SCREEN_WIDTH, SCREEN_HEIGHT
 image_path = os.path.join("assets", "enemy.png")
 sound_path = os.path.join("assets", "ufo_explosion.mp3")
 
@@ -71,6 +71,11 @@ class Enemy(CircleShape):
         self.velocity = pygame.Vector2(1,1) * self.out_velocity
         self.velocity = self.velocity.rotate(self.out_angle)
         self.position += self.velocity * dt
+        
+        if self.position.x < -2 or self.position.x > SCREEN_WIDTH: 
+            self.kill()
+        if self.position.y < -2 or self.position.y > SCREEN_HEIGHT: 
+            self.kill()
     
     def attack(self, current_pos=None, at_rest=None): 
         if not at_rest: 
